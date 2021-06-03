@@ -1,0 +1,20 @@
+### Headers settings
+company: Nurym IOS Dev
+
+### Xcode project settings
+project_name: MovieApp
+xcodeproj_path: MovieApp.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: MovieApp
+
+# The file path for new modules
+project_file_path: MovieApp
+
+# The Xcode group path to new modules
+project_group_path: MovieApp
+
+### Templates
+templates:
+- {name: swifty_viper}
