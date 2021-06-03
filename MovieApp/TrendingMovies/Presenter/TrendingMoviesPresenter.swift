@@ -11,7 +11,11 @@ class TrendingMoviesPresenter {
     weak var view: TrendingMoviesViewInput!
     var interactor: TrendingMoviesInteractorInput!
     var router: TrendingMoviesRouterInput!
-
+    let movieCollection: MovieCollections
+    
+    init(colection: MovieCollections) {
+        self.movieCollection = colection
+    }
 }
 
 // MARK: TrendingMoviesModuleInput
@@ -25,8 +29,8 @@ extension TrendingMoviesPresenter: TrendingMoviesViewOutput {
         router.openMovieDetails(with: id, controller: self.view.getController())
     }
     
-    func getTrendingMovies(_ pageNumber: Int) {
-        interactor?.getTrendingMovies(pageNumber)
+    func fetchMovies(_ pageNumber: Int) {
+        interactor?.fetchMovies(pageNumber, collection: movieCollection)
     }
     
 
@@ -37,7 +41,9 @@ extension TrendingMoviesPresenter: TrendingMoviesViewOutput {
 
 // MARK: TrendingMoviesInteractorOutput
 extension TrendingMoviesPresenter: TrendingMoviesInteractorOutput {
-    func setTrendingMovies(_ movies: [MoviesEntity.Movie]) {
-        view.setTrendingMovies(movies)
+    
+    func setMovies(_ movies: [MoviesEntity.Movie]) {
+        view.setMovies(movies)
+        view.setNavigationTitle(movieCollection.rawValue)
     }
 }

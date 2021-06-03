@@ -34,8 +34,18 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         output.viewIsReady()
         configureCollectionsView()
+    }
+    @IBAction func openTodayMovies(_ sender: Any) {
+        output.openMovies(collection: MovieCollections.Today)
+    }
+    @IBAction func openSoonMovies(_ sender: Any) {
+        output.openMovies(collection: MovieCollections.Soon)
+    }
+    @IBAction func openTrendingMovies(_ sender: Any) {
+        output.openMovies(collection: MovieCollections.Trending)
     }
     
 }
@@ -79,6 +89,12 @@ private extension HomeViewController {
         trendingCollectionView.delegate = self
         trendingCollectionView.dataSource = self
         trendingCollectionView.register(MovieCollectionViewCell.nib, forCellWithReuseIdentifier: MovieCollectionViewCell.idetifier)
+    }
+    
+    func configureNavigationBar(){
+        title = "Home"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(cgColor: CGColor(red: 0.000, green: 0.769, blue: 0.683, alpha: 1.0))]
+        navigationController?.navigationBar.barTintColor = UIColor.black
     }
 }
 

@@ -25,9 +25,8 @@ class TrendingMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "News"
         configTableView()
-        output.getTrendingMovies(pageNumber)
+        output.fetchMovies(pageNumber)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +37,14 @@ class TrendingMoviesViewController: UIViewController {
 
 // MARK: TrendingMoviesViewInput
 extension TrendingMoviesViewController: TrendingMoviesViewInput {
+    func setNavigationTitle(_ title: String) {
+        self.title = title
+    }
+    
+    func setMovies(_ movies: [MoviesEntity.Movie]) {
+        self.movies = movies
+    }
+    
     func getController() -> UIViewController {
         return self
     }
@@ -94,7 +101,7 @@ extension TrendingMoviesViewController: UITableViewDataSource{
         if deltaOffSet <= 10 && currentOffset > 200 && !isLoading {
             isLoading = true
             pageNumber += 1
-            output.getTrendingMovies(pageNumber)
+            output.fetchMovies(pageNumber)
         }
     }
 }
