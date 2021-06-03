@@ -15,6 +15,7 @@ class MovieDetailsViewController: UIViewController {
     private var movie: MovieDetailsEntity? {
         didSet{
             if let movie = movie {
+                title = movie.title
                 let posterURL = URL(string: "https://image.tmdb.org/t/p/w500" + (movie.backdrop ?? ""))
                 posterImageView.kf.setImage(with: posterURL)
                 titleLabel.text = movie.title

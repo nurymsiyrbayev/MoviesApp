@@ -14,6 +14,7 @@ protocol TrendingMoviesViewInput: class {
     */
 
     func setupInitialState()
-    func setTrendingMovies(_ movies: [MoviesEntity.Movie])
+    func setNavigationTitle(_ title: String)
+    func setMovies(_ movies: [MoviesEntity.Movie])
     func getController() -> UIViewController
 }

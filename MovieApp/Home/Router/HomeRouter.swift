@@ -14,6 +14,11 @@ class HomeRouter {
 
 // MARK: HomeRouterInput
 extension HomeRouter: HomeRouterInput {
+    func openMovies(collection: MovieCollections, controller: UIViewController) {
+        let newController = TrendingMoviesModuleInitializer().viewController(collection: collection)
+        controller.navigationController?.pushViewController(newController, animated: true)
+    }
+    
     func openMovieDetails(with id: Int, controller: UIViewController) {
         let newController = MovieDetailsModuleInitializer().viewController(with: id)
         controller.navigationController?.pushViewController(newController, animated: true)

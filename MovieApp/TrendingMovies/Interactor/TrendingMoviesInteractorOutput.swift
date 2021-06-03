@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TrendingMoviesInteractorOutput: class {
-    func setTrendingMovies(_ movies: [MoviesEntity.Movie])
+    func setMovies(_ movies: [MoviesEntity.Movie])
 }

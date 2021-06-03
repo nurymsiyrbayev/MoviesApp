@@ -21,6 +21,10 @@ extension HomePresenter: HomeModuleInput {
 
 // MARK: HomeViewOutput
 extension HomePresenter: HomeViewOutput {
+    func openMovies(collection: MovieCollections) {
+        router.openMovies(collection: collection, controller: view.getController())
+    }
+    
     func openMovieDetails(with id: Int) {
         router.openMovieDetails(with: id, controller: self.view.getController())
     }

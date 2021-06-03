@@ -10,18 +10,18 @@ import UIKit
 
 class TrendingMoviesModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, collection: MovieCollections) {
 
         if let viewController = viewInput as? TrendingMoviesViewController {
-            configure(viewController: viewController)
+            configure(viewController: viewController, collection: collection)
         }
     }
 
-    private func configure(viewController: TrendingMoviesViewController) {
+    private func configure(viewController: TrendingMoviesViewController, collection: MovieCollections) {
 
         let router = TrendingMoviesRouter()
 
-        let presenter = TrendingMoviesPresenter()
+        let presenter = TrendingMoviesPresenter(colection: collection)
         presenter.view = viewController
         presenter.router = router
 

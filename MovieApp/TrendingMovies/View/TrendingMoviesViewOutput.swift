@@ -14,6 +14,6 @@ protocol TrendingMoviesViewOutput {
     */
 
     func viewIsReady()
-    func getTrendingMovies(_ pageNumber: Int)
+    func fetchMovies(_ pageNumber: Int)
     func openMovieDetails(with id: Int)
 }

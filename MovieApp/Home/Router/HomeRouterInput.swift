@@ -10,5 +10,5 @@ import UIKit
 
 protocol HomeRouterInput {
     func openMovieDetails(with id: Int, controller: UIViewController)
-        
+    func openMovies(collection: MovieCollections, controller: UIViewController)
 }

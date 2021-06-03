@@ -14,8 +14,19 @@ class TrendingMoviesInteractor {
 }
 
 extension TrendingMoviesInteractor: TrendingMoviesInteractorInput {
-    func getTrendingMovies(_ pageNumber: Int) {
-        var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/trending/movie/week")
+    
+    func fetchMovies(_ pageNumber: Int, collection: MovieCollections) {
+        
+        var urlComponents: URLComponents?
+        switch collection {
+        case MovieCollections.Today:
+            urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/now_playing")
+        case MovieCollections.Soon:
+            urlComponents = URLComponents(string:  "https://api.themoviedb.org/3/movie/upcoming")
+        case MovieCollections.Trending:
+            urlComponents = URLComponents(string: "https://api.themoviedb.org/3/trending/movie/week")
+        }
+        
         urlComponents?.queryItems = [
             URLQueryItem(name: "api_key", value: "00133da9de6d883e708e1c2aee13de35"),
             URLQueryItem(name: "page", value: String(pageNumber))
@@ -29,8 +40,7 @@ extension TrendingMoviesInteractor: TrendingMoviesInteractorInput {
                         do {
                                 let movies = try JSONDecoder().decode(MoviesEntity.self, from: data)
                                 DispatchQueue.main.async {
-                                    self?.output.setTrendingMovies(movies.results)
-                                
+                                    self?.output.setMovies(movies.results)
                             }
                         } catch {
                             print(error)
