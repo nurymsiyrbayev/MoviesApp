@@ -88,6 +88,32 @@ extension HomeInteractor: HomeInteractorInput {
                 }.resume()
             }
         }
+    
+    private func fetchMoviesGenre(ids:[Int]) -> [GenreEntities.Genre]? {
+        var genres: [GenreEntities.Genre]?
+        var urlComponents = URLComponents(string:  "https://api.themoviedb.org/3/genre/movie/list")
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "api_key", value: api_key)
+        ]
+        if let url = urlComponents?.url?.absoluteURL {
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                if error == nil {
+                    guard let data = data else {return}
+                    DispatchQueue.global().async {
+                        do {
+                            let decodedGenres = try JSONDecoder().decode(GenreEntities.self, from: data)
+                            DispatchQueue.main.async {
+                                genres = decodedGenres.genres
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }.resume()
+        }
+        return genres
+    }
         
         
     }

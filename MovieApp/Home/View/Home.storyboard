@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYe-NM-N60">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtW-qe-Lns">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1064"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1cP-yx-nsg">
+                                                <rect key="frame" x="16" y="16" width="382" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today at the cinema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vm6-5r-FB9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="322.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wL-Si-lkD">
+                                                        <rect key="frame" x="330.5" y="0.0" width="51.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <state key="normal" title="All">
+                                                            <color key="titleColor" red="0.0" green="0.7693973183631897" blue="0.68335514425414279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openTodayMovies:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hLm-vf-MoX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="vm6-5r-FB9" firstAttribute="leading" secondItem="1cP-yx-nsg" secondAttribute="leading" id="3xP-Fm-za3"/>
+                                                    <constraint firstItem="vm6-5r-FB9" firstAttribute="top" secondItem="1cP-yx-nsg" secondAttribute="top" id="Gkd-Er-Ipj"/>
+                                                    <constraint firstItem="7wL-Si-lkD" firstAttribute="leading" secondItem="vm6-5r-FB9" secondAttribute="trailing" constant="8" id="rjb-EV-IC8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BqH-L5-flW">
+                                                <rect key="frame" x="16" y="376" width="382" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soon at the cinema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-sc-ixF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="331.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bll-8E-2ch">
+                                                        <rect key="frame" x="331.5" y="0.0" width="50.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <state key="normal" title="All">
+                                                            <color key="titleColor" red="0.0" green="0.7693973183631897" blue="0.68335514425414279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openSoonMovies:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OPp-2V-8Y8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Squ-LA-cnC">
+                                                <rect key="frame" x="16" y="736" width="382" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending at the cinema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e8-iH-KkZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="338.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30E-Hq-jLt">
+                                                        <rect key="frame" x="338.5" y="0.0" width="43.5" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <state key="normal" title="All">
+                                                            <color key="titleColor" red="0.0" green="0.76939731840000003" blue="0.68335514429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openTrendingMovies:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lwm-d4-ga1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s93-kz-r5Y">
+                                                <rect key="frame" x="0.0" y="64" width="414" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="KV6-PN-SKK"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AWd-qo-iNa">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wcm-fT-YHV">
+                                                <rect key="frame" x="0.0" y="424" width="414" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="jut-So-4H0"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ulf-Zk-KO3">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-Yl-J7X">
+                                                <rect key="frame" x="0.0" y="784" width="414" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="UdX-qU-OaH"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="96G-Cw-VrA">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Wcm-fT-YHV" firstAttribute="top" secondItem="BqH-L5-flW" secondAttribute="bottom" constant="16" id="0U7-DF-cFo"/>
+                                            <constraint firstItem="Wcm-fT-YHV" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" id="0jK-n3-QuV"/>
+                                            <constraint firstItem="BqH-L5-flW" firstAttribute="top" secondItem="s93-kz-r5Y" secondAttribute="bottom" constant="32" id="1GC-3G-t2w"/>
+                                            <constraint firstAttribute="trailing" secondItem="1cP-yx-nsg" secondAttribute="trailing" constant="16" id="6YN-pr-EZs"/>
+                                            <constraint firstItem="BqH-L5-flW" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" constant="16" id="9TC-9d-B7y"/>
+                                            <constraint firstItem="c8N-Yl-J7X" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" id="Gow-r6-UU3"/>
+                                            <constraint firstItem="1cP-yx-nsg" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" constant="16" id="OeD-O5-efz"/>
+                                            <constraint firstAttribute="trailing" secondItem="s93-kz-r5Y" secondAttribute="trailing" id="UNd-ik-wAZ"/>
+                                            <constraint firstItem="Squ-LA-cnC" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" constant="16" id="WKi-oQ-VEQ"/>
+                                            <constraint firstItem="1cP-yx-nsg" firstAttribute="top" secondItem="RtW-qe-Lns" secondAttribute="top" constant="16" id="aHE-LS-kxV"/>
+                                            <constraint firstItem="Squ-LA-cnC" firstAttribute="top" secondItem="Wcm-fT-YHV" secondAttribute="bottom" constant="32" id="btc-aW-mCH"/>
+                                            <constraint firstAttribute="bottom" secondItem="c8N-Yl-J7X" secondAttribute="bottom" id="iNx-Sm-Yrr"/>
+                                            <constraint firstItem="s93-kz-r5Y" firstAttribute="top" secondItem="1cP-yx-nsg" secondAttribute="bottom" constant="16" id="ka1-jQ-47F"/>
+                                            <constraint firstItem="s93-kz-r5Y" firstAttribute="leading" secondItem="RtW-qe-Lns" secondAttribute="leading" id="mZi-6W-9bv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wcm-fT-YHV" secondAttribute="trailing" id="n7z-L4-rhE"/>
+                                            <constraint firstAttribute="trailing" secondItem="c8N-Yl-J7X" secondAttribute="trailing" id="rXp-oi-4Lw"/>
+                                            <constraint firstItem="c8N-Yl-J7X" firstAttribute="top" secondItem="Squ-LA-cnC" secondAttribute="bottom" constant="16" id="svD-VW-zbU"/>
+                                            <constraint firstAttribute="trailing" secondItem="BqH-L5-flW" secondAttribute="trailing" constant="16" id="yBs-ay-3kF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Squ-LA-cnC" secondAttribute="trailing" constant="16" id="z7N-pN-ov8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RtW-qe-Lns" firstAttribute="width" secondItem="vYe-NM-N60" secondAttribute="width" id="7o0-9h-bNK"/>
+                                    <constraint firstAttribute="bottom" secondItem="RtW-qe-Lns" secondAttribute="bottom" id="Cy6-Ah-65V"/>
+                                    <constraint firstItem="RtW-qe-Lns" firstAttribute="leading" secondItem="vYe-NM-N60" secondAttribute="leading" id="LnR-wa-Qzv"/>
+                                    <constraint firstAttribute="trailing" secondItem="RtW-qe-Lns" secondAttribute="trailing" id="N54-HK-zbL"/>
+                                    <constraint firstItem="RtW-qe-Lns" firstAttribute="top" secondItem="vYe-NM-N60" secondAttribute="top" id="zCz-ge-B3S"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="J6m-hl-Y5w"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Hvl-Gb-D7Y"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vYe-NM-N60" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0hg-Zz-wNU"/>
+                            <constraint firstItem="vYe-NM-N60" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ABk-3y-CuP"/>
+                            <constraint firstAttribute="bottom" secondItem="vYe-NM-N60" secondAttribute="bottom" id="jA4-RZ-6B0"/>
+                            <constraint firstItem="vYe-NM-N60" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="mKg-qY-Yvf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="soonCollectionView" destination="Wcm-fT-YHV" id="Fgj-Ps-QGB"/>
+                        <outlet property="todayCollectionView" destination="s93-kz-r5Y" id="qYW-tV-E1v"/>
+                        <outlet property="trendingCollectionView" destination="c8N-Yl-J7X" id="Wil-8r-eN4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="62"/>
+        </scene>
+    </scenes>
+</document>

@@ -16,7 +16,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         didSet{
             if let movie = movie {
                 configureLayout()
-                configureLayout()
                 let posterURL = URL(string: "https://image.tmdb.org/t/p/w500" + (movie.poster ?? ""))
                 posterImageView.kf.setImage(with: posterURL)
                 ratingLabel.text = String(movie.rating ?? 0)
@@ -35,7 +34,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureLayout()
     }
 }
 
@@ -48,7 +46,6 @@ extension MovieCollectionViewCell {
 // MARK: Private func
 private extension MovieCollectionViewCell {
     func configureLayout() {
-        contentView.frame = CGRect(x: 0, y: 0, width: 140, height: 240)
         configureRatingContainerView()
         configurePosterImageView()
     }
