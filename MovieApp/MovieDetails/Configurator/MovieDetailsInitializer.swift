@@ -18,5 +18,4 @@ class MovieDetailsModuleInitializer: NSObject {
         
         return vc
     }
-
 }

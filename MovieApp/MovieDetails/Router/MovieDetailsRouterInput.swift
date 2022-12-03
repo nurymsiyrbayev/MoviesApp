@@ -8,6 +8,4 @@
 
 import Foundation
 
-protocol MovieDetailsRouterInput {
-
-}
+protocol MovieDetailsRouterInput {}

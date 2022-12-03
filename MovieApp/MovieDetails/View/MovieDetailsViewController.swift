@@ -11,7 +11,12 @@ import Kingfisher
 
 class MovieDetailsViewController: UIViewController {
     
+    // MARK: Public
+    
     var output: MovieDetailsViewOutput!
+    
+    // MARK: Private
+    
     private var movie: MovieDetailsEntity? {
         didSet{
             if let movie = movie {
@@ -32,23 +37,28 @@ class MovieDetailsViewController: UIViewController {
         
     }
     
+    // MARK: IBOutlet
     
-    @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var castsCollectionView: UICollectionView!
+    @IBOutlet private weak var posterImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var castsCollectionView: UICollectionView!
+    
+    // MARK: Lifee Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
         configureCollectionView()
+        navigationItem.backButtonDisplayMode = .minimal
     }
-    
 }
 
-// MARK: MovieDetailsViewInput 
+// MARK: MovieDetailsViewInput
+
 extension MovieDetailsViewController: MovieDetailsViewInput {
+    
     func setMovieCasts(_ casts: [CastsEntity.Cast]) {
         movieCasts = casts
     }
@@ -57,14 +67,14 @@ extension MovieDetailsViewController: MovieDetailsViewInput {
         movie = movieDetails
     }
     
-
-    func setupInitialState() {
-        
-    }
+    
+    func setupInitialState() {}
 }
 
 // MARK: Privte func
+
 private extension MovieDetailsViewController {
+    
     func configureCollectionView(){
         castsCollectionView.dataSource = self
         castsCollectionView.delegate = self
@@ -73,12 +83,13 @@ private extension MovieDetailsViewController {
 }
 
 // MARK: UICollectionViewDelegate
-extension MovieDetailsViewController: UICollectionViewDelegate {
-    
-}
+
+extension MovieDetailsViewController: UICollectionViewDelegate {}
 
 // MARK: UICollectionViewDataSource
+
 extension MovieDetailsViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieCasts.count
     }

@@ -7,10 +7,18 @@
 //
 
 class MovieDetailsPresenter {
-    private var movieId: Int
+    
+    // MARK: Public
+    
     weak var view: MovieDetailsViewInput!
     var interactor: MovieDetailsInteractorInput!
     var router: MovieDetailsRouterInput!
+    
+    // MARK: Private
+    
+    private var movieId: Int
+    
+    // MARK: Init
     
     init(movieId: Int) {
         self.movieId = movieId
@@ -18,21 +26,23 @@ class MovieDetailsPresenter {
 }
 
 // MARK: MovieDetailsModuleInput
-extension MovieDetailsPresenter: MovieDetailsModuleInput {
 
-}
+extension MovieDetailsPresenter: MovieDetailsModuleInput {}
 
 // MARK: MovieDetailsViewOutput
-extension MovieDetailsPresenter: MovieDetailsViewOutput {
 
-  func viewIsReady() {
-    self.interactor.fetchMovieDetails(with: movieId)
-    self.interactor.fetchMovieCasts(with: movieId)
+extension MovieDetailsPresenter: MovieDetailsViewOutput {
+    
+    func viewIsReady() {
+        self.interactor.fetchMovieDetails(with: movieId)
+        self.interactor.fetchMovieCasts(with: movieId)
     }
 }
 
 // MARK: MovieDetailsInteractorOutput
+
 extension MovieDetailsPresenter: MovieDetailsInteractorOutput {
+    
     func setMovieCasts(_ casts: [CastsEntity.Cast]) {
         view.setMovieCasts(casts)
     }
@@ -40,5 +50,5 @@ extension MovieDetailsPresenter: MovieDetailsInteractorOutput {
     func setMovieDetails(_ movie: MovieDetailsEntity) {
         view.setMovieDetails(movie)
     }
-   
+    
 }

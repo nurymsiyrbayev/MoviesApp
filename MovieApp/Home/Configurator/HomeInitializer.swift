@@ -18,5 +18,4 @@ class HomeModuleInitializer: NSObject {
         
         return vc
     }
-
 }

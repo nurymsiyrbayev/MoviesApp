@@ -6,7 +6,7 @@
 //  Copyright © 2021 Nurym IOS Dev. All rights reserved.
 //
 
-protocol MovieDetailsViewInput: class {
+protocol MovieDetailsViewInput: AnyObject {
 
     func setupInitialState()
     func setMovieDetails(_ movieDetails: MovieDetailsEntity)

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol HomeInteractorInput {
+    
     func fetchTrendingMovies()
     func fetchSoonMovies()
     func fetchTodayMovies()

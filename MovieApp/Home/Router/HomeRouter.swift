@@ -8,12 +8,12 @@
 
 import UIKit
 
-class HomeRouter {
-
-}
+class HomeRouter {}
 
 // MARK: HomeRouterInput
+
 extension HomeRouter: HomeRouterInput {
+    
     func openMovies(collection: MovieCollections, controller: UIViewController) {
         let newController = TrendingMoviesModuleInitializer().viewController(collection: collection)
         controller.navigationController?.pushViewController(newController, animated: true)

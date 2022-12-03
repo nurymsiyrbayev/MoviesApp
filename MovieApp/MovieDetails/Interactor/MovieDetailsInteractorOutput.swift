@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol MovieDetailsInteractorOutput: class {
+protocol MovieDetailsInteractorOutput: AnyObject {
+    
     func setMovieDetails(_ movie: MovieDetailsEntity)
     func setMovieCasts(_ casts: [CastsEntity.Cast])
 }

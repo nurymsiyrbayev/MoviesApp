@@ -9,8 +9,12 @@
 import UIKit
 
 class TrendingMoviesViewController: UIViewController {
-
+    
+    // MARK: Public
+    
     var output: TrendingMoviesViewOutput!
+    
+    // MARK: Private
     
     private var pageNumber: Int = 1
     private var isLoading: Bool = false
@@ -21,22 +25,29 @@ class TrendingMoviesViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
+    // MARK: IBOutlet
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
         output.fetchMovies(pageNumber)
+        navigationItem.backButtonDisplayMode = .minimal
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-
 }
 
 // MARK: TrendingMoviesViewInput
+
 extension TrendingMoviesViewController: TrendingMoviesViewInput {
+    
     func setNavigationTitle(_ title: String) {
         self.title = title
     }
@@ -53,13 +64,13 @@ extension TrendingMoviesViewController: TrendingMoviesViewInput {
         self.movies += movies
     }
     
-    func setupInitialState() {
-        
-    }
+    func setupInitialState() {}
 }
 
 // MARK: Private func
+
 private extension TrendingMoviesViewController {
+    
     func configTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -71,7 +82,8 @@ private extension TrendingMoviesViewController {
 }
 
 // MARK: UITableViewDelegate
-extension TrendingMoviesViewController: UITableViewDelegate{
+
+extension TrendingMoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         output.openMovieDetails(with: movies[indexPath.row].id)
@@ -79,7 +91,9 @@ extension TrendingMoviesViewController: UITableViewDelegate{
 }
 
 // MARK: UITableViewDataSource
-extension TrendingMoviesViewController: UITableViewDataSource{
+
+extension TrendingMoviesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }

@@ -10,27 +10,35 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: Public
+    
     var output: HomeViewOutput!
     
-    @IBOutlet weak var todayCollectionView: UICollectionView!
-    @IBOutlet weak var soonCollectionView: UICollectionView!
-    @IBOutlet weak var trendingCollectionView: UICollectionView!
+    // MARK: Private
     
-    var todayMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
+    private var todayMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
         didSet{
             todayCollectionView.reloadData()
         }
     }
-    var soonMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
+    private var soonMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
         didSet{
             soonCollectionView.reloadData()
         }
     }
-    var trendingMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
+    private var trendingMovies: [MoviesEntity.Movie] = [MoviesEntity.Movie]() {
         didSet{
             trendingCollectionView.reloadData()
         }
     }
+    
+    // MARK: IBOutlet
+    
+    @IBOutlet private weak var todayCollectionView: UICollectionView!
+    @IBOutlet private weak var soonCollectionView: UICollectionView!
+    @IBOutlet private weak var trendingCollectionView: UICollectionView!
+    
+    // MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +46,27 @@ class HomeViewController: UIViewController {
         output.viewIsReady()
         configureCollectionsView()
     }
-    @IBAction func openTodayMovies(_ sender: Any) {
+    
+    // MARK: IBAction
+    
+    @IBAction private func openTodayMovies(_ sender: Any) {
         output.openMovies(collection: MovieCollections.Today)
     }
-    @IBAction func openSoonMovies(_ sender: Any) {
+    
+    @IBAction private func openSoonMovies(_ sender: Any) {
         output.openMovies(collection: MovieCollections.Soon)
     }
-    @IBAction func openTrendingMovies(_ sender: Any) {
+    
+    @IBAction private func openTrendingMovies(_ sender: Any) {
         output.openMovies(collection: MovieCollections.Trending)
     }
     
 }
 
-// MARK: HomeViewInput 
+// MARK: HomeViewInput
+
 extension HomeViewController: HomeViewInput {
+    
     func getController() -> UIViewController {
         return self
     }
@@ -68,38 +83,41 @@ extension HomeViewController: HomeViewInput {
         todayMovies = movies
     }
     
-    
-    func setupInitialState() {
-        
-    }
+    func setupInitialState() {}
     
 }
 
 // MARK: Private func
+
 private extension HomeViewController {
+    
     func configureCollectionsView() {
         todayCollectionView.delegate = self
         todayCollectionView.dataSource = self
         todayCollectionView.register(MovieCollectionViewCell.nib, forCellWithReuseIdentifier: MovieCollectionViewCell.idetifier)
+        todayCollectionView.showsHorizontalScrollIndicator = false
         
         soonCollectionView.delegate = self
         soonCollectionView.dataSource = self
         soonCollectionView.register(MovieCollectionViewCell.nib, forCellWithReuseIdentifier: MovieCollectionViewCell.idetifier)
+        soonCollectionView.showsHorizontalScrollIndicator = false
         
         trendingCollectionView.delegate = self
         trendingCollectionView.dataSource = self
         trendingCollectionView.register(MovieCollectionViewCell.nib, forCellWithReuseIdentifier: MovieCollectionViewCell.idetifier)
+        trendingCollectionView.showsHorizontalScrollIndicator = false
     }
     
-    func configureNavigationBar(){
+    func configureNavigationBar() {
         title = "Home"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(cgColor: CGColor(red: 0.000, green: 0.769, blue: 0.683, alpha: 1.0))]
-        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationItem.backButtonDisplayMode = .minimal
     }
 }
 
 // MARK: UICollectionViewDelegate
+
 extension HomeViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case todayCollectionView:
@@ -116,6 +134,7 @@ extension HomeViewController: UICollectionViewDelegate {
 
 // MARK: UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case todayCollectionView:
@@ -156,8 +175,5 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
-        
-        
-        
     }
 }

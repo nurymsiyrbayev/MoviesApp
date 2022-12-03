@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let navigationController = UINavigationController(rootViewController: HomeModuleInitializer().viewController())
+        
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.lb_pr]
+        navigationController.navigationBar.tintColor = UIColor.lb_pr
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

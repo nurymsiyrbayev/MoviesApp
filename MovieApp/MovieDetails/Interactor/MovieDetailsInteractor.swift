@@ -8,12 +8,14 @@
 import Foundation
 
 class MovieDetailsInteractor {
-
+    
+    // MARK: Public
+    
     weak var output: MovieDetailsInteractorOutput!
-
 }
 
 // MARK: MovieDetailsInteractorInput
+
 extension MovieDetailsInteractor: MovieDetailsInteractorInput {
     
     func fetchMovieCasts(with id: Int) {
