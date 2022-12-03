@@ -18,5 +18,4 @@ class TrendingMoviesModuleInitializer: NSObject {
         
         return vc
     }
-
 }

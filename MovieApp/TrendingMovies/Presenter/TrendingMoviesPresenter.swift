@@ -7,11 +7,18 @@
 //
 
 class TrendingMoviesPresenter {
-
+    
+    // MARK: Public
+    
     weak var view: TrendingMoviesViewInput!
     var interactor: TrendingMoviesInteractorInput!
     var router: TrendingMoviesRouterInput!
-    let movieCollection: MovieCollections
+    
+    // MARK: Pivate
+    
+    private let movieCollection: MovieCollections
+    
+    // MARK: Init
     
     init(colection: MovieCollections) {
         self.movieCollection = colection
@@ -19,12 +26,13 @@ class TrendingMoviesPresenter {
 }
 
 // MARK: TrendingMoviesModuleInput
-extension TrendingMoviesPresenter: TrendingMoviesModuleInput {
 
-}
+extension TrendingMoviesPresenter: TrendingMoviesModuleInput {}
 
 // MARK: TrendingMoviesViewOutput
+
 extension TrendingMoviesPresenter: TrendingMoviesViewOutput {
+    
     func openMovieDetails(with id: Int) {
         router.openMovieDetails(with: id, controller: self.view.getController())
     }
@@ -33,13 +41,11 @@ extension TrendingMoviesPresenter: TrendingMoviesViewOutput {
         interactor?.fetchMovies(pageNumber, collection: movieCollection)
     }
     
-
-    func viewIsReady() {
-
-    }
+    func viewIsReady() {}
 }
 
 // MARK: TrendingMoviesInteractorOutput
+
 extension TrendingMoviesPresenter: TrendingMoviesInteractorOutput {
     
     func setMovies(_ movies: [MoviesEntity.Movie]) {

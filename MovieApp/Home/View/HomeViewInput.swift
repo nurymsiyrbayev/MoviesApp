@@ -7,13 +7,11 @@
 //
 import UIKit
 
-protocol HomeViewInput: class {
+protocol HomeViewInput: AnyObject {
 
     func setupInitialState()
-    
     func setTrendingMovies(_ movies: [MoviesEntity.Movie])
     func setSoonMovies(_ movies: [MoviesEntity.Movie])
     func setTodayMovies(_ movies: [MoviesEntity.Movie])
-    
     func getController() -> UIViewController
 }

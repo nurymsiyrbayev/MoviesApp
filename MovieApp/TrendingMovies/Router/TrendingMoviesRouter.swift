@@ -8,10 +8,9 @@
 import UIKit
 
 class TrendingMoviesRouter: TrendingMoviesRouterInput {
+    
     func openMovieDetails(with id: Int, controller: UIViewController) {
         let newController = MovieDetailsModuleInitializer().viewController(with: id)
         controller.navigationController?.pushViewController(newController, animated: true)
     }
-    
-   
 }

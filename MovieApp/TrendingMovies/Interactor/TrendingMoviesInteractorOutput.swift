@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol TrendingMoviesInteractorOutput: class {
+protocol TrendingMoviesInteractorOutput: AnyObject {
+    
     func setMovies(_ movies: [MoviesEntity.Movie])
 }

@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 protocol TrendingMoviesRouterInput {
+    
     func openMovieDetails(with id: Int, controller: UIViewController )
 }

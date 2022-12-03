@@ -9,7 +9,6 @@
 protocol HomeViewOutput {
 
     func viewIsReady()
-    
     func openMovieDetails(with id: Int)
     func openMovies(collection: MovieCollections)
 }

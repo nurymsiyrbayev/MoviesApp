@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TrendingMoviesInteractorInput {
+    
     func fetchMovies(_ pageNumber: Int, collection: MovieCollections)
 }

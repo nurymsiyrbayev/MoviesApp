@@ -8,11 +8,6 @@
 
 protocol TrendingMoviesViewOutput {
 
-    /**
-        @author nurymsiyrbayev
-        Notify presenter that view is ready
-    */
-
     func viewIsReady()
     func fetchMovies(_ pageNumber: Int)
     func openMovieDetails(with id: Int)

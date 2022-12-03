@@ -7,20 +7,21 @@
 //
 
 class HomePresenter {
-
+    
     weak var view: HomeViewInput!
     var interactor: HomeInteractorInput!
     var router: HomeRouterInput!
-
+    
 }
 
 // MARK: HomeModuleInput
-extension HomePresenter: HomeModuleInput {
 
-}
+extension HomePresenter: HomeModuleInput {}
 
 // MARK: HomeViewOutput
+
 extension HomePresenter: HomeViewOutput {
+    
     func openMovies(collection: MovieCollections) {
         router.openMovies(collection: collection, controller: view.getController())
     }
@@ -29,7 +30,6 @@ extension HomePresenter: HomeViewOutput {
         router.openMovieDetails(with: id, controller: self.view.getController())
     }
     
-
     func viewIsReady() {
         interactor.fetchTrendingMovies()
         interactor.fetchTodayMovies()
@@ -38,7 +38,9 @@ extension HomePresenter: HomeViewOutput {
 }
 
 // MARK: HomeInteractorOutput
+
 extension HomePresenter: HomeInteractorOutput {
+    
     func setTrendingMovies(_ movies: [MoviesEntity.Movie]) {
         view.setTrendingMovies(movies)
     }

@@ -9,9 +9,12 @@ import Foundation
 
 class TrendingMoviesInteractor {
 
+    // MARK: Public
+    
     weak var output: TrendingMoviesInteractorOutput!
-
 }
+
+// MARK: TrendingMoviesInteractorInput
 
 extension TrendingMoviesInteractor: TrendingMoviesInteractorInput {
     

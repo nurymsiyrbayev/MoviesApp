@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol HomeInteractorOutput: class {
+protocol HomeInteractorOutput: AnyObject {
+    
     func setTrendingMovies(_ movies: [MoviesEntity.Movie])
     func setSoonMovies(_ movies: [MoviesEntity.Movie])
     func setTodayMovies(_ movies: [MoviesEntity.Movie])

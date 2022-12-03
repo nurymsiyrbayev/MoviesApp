@@ -51,6 +51,8 @@
 		C25CA943B0B96968A71CBA64 /* TrendingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E315BE574F4983F1C6801 /* TrendingMoviesViewController.swift */; };
 		C3066C79D7998B310D05F09E /* MovieDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3304CD0B230DA08A2F2AF /* MovieDetailsViewInput.swift */; };
 		D62773539D69411784A35B7D /* TrendingMoviesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF5342FA843D5EEC6E3EF77 /* TrendingMoviesViewInput.swift */; };
+		D8FB5DBF293BA4C600526409 /* MovieCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB5DBE293BA4C600526409 /* MovieCellEntity.swift */; };
+		D8FB5DC3293BA50500526409 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB5DC2293BA50500526409 /* UIColor++.swift */; };
 		DDA07C509B0EBE45DB94A6F0 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB54514C3ECF36DDC3C15CD1 /* MovieDetailsViewController.swift */; };
 		DE13E5B3B2E183C6C364AEF2 /* MovieDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99033E4E7C1E4A2672AF987F /* MovieDetailsInteractorInput.swift */; };
 		DEC34AAB861BF385204CD533 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5140CAD7A4A2D14DFE8428A /* HomeRouter.swift */; };
@@ -116,6 +118,8 @@
 		C7A655190D54FF0FD9A9397C /* Pods-MovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D17F709F33AA1244DA7B18BF /* TrendingMoviesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrendingMoviesInteractorInput.swift; sourceTree = "<group>"; };
 		D892432B16EB5CA9E72E4ED6 /* HomeInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		D8FB5DBE293BA4C600526409 /* MovieCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellEntity.swift; sourceTree = "<group>"; };
+		D8FB5DC2293BA50500526409 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
 		D98B99E0F99082A02BC4996B /* MovieDetailsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenter.swift; sourceTree = "<group>"; };
 		DDC09FC4BE22EFE536FCC92B /* MovieDetailsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MovieDetailsModuleInput.swift; sourceTree = "<group>"; };
 		DFE813181D59E61FCAFBE6F2 /* HomeModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeModuleInput.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		078AA72526639ED1001D3E54 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				D8FB5DC0293BA4E000526409 /* Extensions */,
 				070F4B0C2663837C00C132D5 /* AppDelegate.swift */,
 				070F4B0E2663837C00C132D5 /* SceneDelegate.swift */,
 				070F4B152663837D00C132D5 /* Assets.xcassets */,
@@ -215,6 +220,7 @@
 				072FD772266828AE00A9260E /* CastsEntity.swift */,
 				073E677126693E89001A9423 /* MovieCollections.swift */,
 				07B955AA26696A0800AE7638 /* GenreEntity.swift */,
+				D8FB5DBE293BA4C600526409 /* MovieCellEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +373,14 @@
 				0D19714E3439BC90E0D0A2AC /* HomeInteractorOutput.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D8FB5DC0293BA4E000526409 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8FB5DC2293BA50500526409 /* UIColor++.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DCDCEBCDB0BE1829AF47729F /* View */ = {
@@ -557,6 +571,7 @@
 				078AA73B2663DB6D001D3E54 /* MoviesEntity.swift in Sources */,
 				EADE195177217A3DEB0BB71A /* TrendingMoviesRouter.swift in Sources */,
 				AC9BFC8CB255E8FD0E5D9D1A /* TrendingMoviesConfigurator.swift in Sources */,
+				D8FB5DBF293BA4C600526409 /* MovieCellEntity.swift in Sources */,
 				15898EBE6B2E491C8BAEF262 /* TrendingMoviesInitializer.swift in Sources */,
 				C3066C79D7998B310D05F09E /* MovieDetailsViewInput.swift in Sources */,
 				4103EC8B20AD61D5EB8E8170 /* MovieDetailsViewOutput.swift in Sources */,
@@ -566,6 +581,7 @@
 				DE13E5B3B2E183C6C364AEF2 /* MovieDetailsInteractorInput.swift in Sources */,
 				734FD95C5668E75B565B14FA /* MovieDetailsInteractorOutput.swift in Sources */,
 				9E77E260C1E1A8CFCE7412A2 /* MovieDetailsInteractor.swift in Sources */,
+				D8FB5DC3293BA50500526409 /* UIColor++.swift in Sources */,
 				F939FDE3BFA9BCEF84E21146 /* MovieDetailsRouterInput.swift in Sources */,
 				1E2414E2B6B09835FBBADEAE /* MovieDetailsRouter.swift in Sources */,
 				FF2D73749B398D120FD043DC /* MovieDetailsConfigurator.swift in Sources */,
@@ -652,7 +668,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -707,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -726,6 +742,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4N44P7FC9;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,6 +763,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4N44P7FC9;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

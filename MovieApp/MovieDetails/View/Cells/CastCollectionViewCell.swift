@@ -9,8 +9,13 @@ import UIKit
 import Kingfisher
 
 class CastCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Public
+    
     static let identifier = "CastCollectionViewCell"
     static let nib = UINib(nibName: identifier, bundle: Bundle(identifier: identifier))
+    
+    // MARK: Private
     
     private var cast: CastsEntity.Cast?{
         didSet{
@@ -23,19 +28,23 @@ class CastCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: IBOutlet
+    
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var nameLaabel: UILabel!
     @IBOutlet private weak var knownLabel: UILabel!
     
+    // MARK: Life Cicle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
 }
 
 // MARK: Public func
+
 extension CastCollectionViewCell {
+    
     func setCast(_ cast: CastsEntity.Cast) {
         self.cast = cast
         configureLayout()
@@ -43,7 +52,9 @@ extension CastCollectionViewCell {
 }
 
 // MARK: Private func
+
 extension CastCollectionViewCell {
+    
     func configureLayout() {
         profileImageView.layer.cornerRadius = profileImageView.bounds.height/2
     }

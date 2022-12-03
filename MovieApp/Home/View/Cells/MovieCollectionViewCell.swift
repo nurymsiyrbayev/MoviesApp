@@ -9,8 +9,13 @@ import UIKit
 import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Public
+    
     static let idetifier: String = "MovieCollectionViewCell"
     static let nib: UINib = UINib(nibName: idetifier, bundle: Bundle(for: MovieCollectionViewCell.self))
+    
+    // MARK: Private
     
     private var movie: MoviesEntity.Movie?{
         didSet{
@@ -25,26 +30,34 @@ class MovieCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: IBOutlet
+    
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var ratingView: UIView!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     
+    // MARK: Life Cicle
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 }
 
+// MARK: Public func
+
 extension MovieCollectionViewCell {
+    
     public func setMovie(_ movie: MoviesEntity.Movie){
         self.movie = movie
     }
 }
 
 // MARK: Private func
+
 private extension MovieCollectionViewCell {
+    
     func configureLayout() {
         configureRatingContainerView()
         configurePosterImageView()

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol MovieDetailsInteractorInput {
+    
     func fetchMovieDetails(with id: Int)
     func fetchMovieCasts(with id: Int)
 }

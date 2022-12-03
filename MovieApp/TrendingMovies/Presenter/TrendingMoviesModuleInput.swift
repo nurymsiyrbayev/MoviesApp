@@ -6,6 +6,4 @@
 //  Copyright © 2021 Nurym IOS Dev. All rights reserved.
 //
 
-protocol TrendingMoviesModuleInput: class {
-
-}
+protocol TrendingMoviesModuleInput: AnyObject {}

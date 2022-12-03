@@ -14,5 +14,4 @@ struct GenreEntities: Decodable {
         let id: Int
         let name: String
     }
-    
 }

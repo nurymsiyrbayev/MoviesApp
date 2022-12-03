@@ -11,6 +11,5 @@ class MovieDetailsRouter {
 }
 
 // MARK: MovieDetailsRouterInput
-extension MovieDetailsRouter: MovieDetailsRouterInput {
 
-}
+extension MovieDetailsRouter: MovieDetailsRouterInput {}
